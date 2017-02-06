@@ -31,7 +31,8 @@
   (spacemacs/set-leader-keys-for-major-mode 'js2-mode
     "fs" 'flow-type/show-start-server
     "fc" 'flow-type/status
-    "fC" 'flow-type/check)
+    "fC" 'flow-type/check
+    "ft" 'flow-type/show-type-at-cursor)
   (when flow-type/no-auto-start
     (add-to-list 'flycheck-javascript-flow-args "--no-auto-start"))
   (when (eq 'process flow-type/no-auto-start)

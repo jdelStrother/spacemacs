@@ -60,6 +60,10 @@
     (unless (string-match "\w*flow is still initializing" output)
       (flow-type/describe-info-object (json-read-from-string output)))))
 
+(defun flow-type/show-type-at-cursor ()
+  (interactive)
+  (message "%s" (flow-type/type-at-cursor)))
+
 (defun flow-type/enable-eldoc ()
   (if (and buffer-file-name (locate-dominating-file buffer-file-name ".flowconfig"))
       (set (make-local-variable 'eldoc-documentation-function) 'flow-type/type-at-cursor)))
